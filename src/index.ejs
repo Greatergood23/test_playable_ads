@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="ad.size" content="width=100%,height=100%">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta http-equiv="cleartype" content="on">
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <script type="text/javascript">
+    const FbPlayableAd = {
+        onCTAClick() {
+          window.parent.postMessage("onCTAClick", "*");
+        },
+      };
+      </script>
+</head>
+<body>
+
+</body>
+
+<script type="text/javascript">
+window.FBPlayableOnCTAClick = () => {
+  (typeof FbPlayableAd === 'undefined') ?
+    alert('FBPlayableAd.onCTAClick') : FbPlayableAd.onCTAClick();
+}
+</script>
